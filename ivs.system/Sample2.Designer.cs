@@ -6,7 +6,7 @@ namespace ivs.system
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        protected System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -27,7 +27,7 @@ namespace ivs.system
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.RightTopTblPnl = new System.Windows.Forms.TableLayoutPanel();
@@ -222,16 +222,16 @@ namespace ivs.system
         }
 
         #endregion
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        protected System.Windows.Forms.Button SaveBtn;
+        protected System.Windows.Forms.Button AddBtn;
+        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.TableLayoutPanel RightTopTblPnl;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button DelBtn;
-        private System.Windows.Forms.Button EditBtn;
-        private System.Windows.Forms.Button viewBtn;
-        private System.Windows.Forms.Panel SearchPanel;
-        private System.Windows.Forms.Label SearchLbl;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button DelBtn;
+        protected System.Windows.Forms.Button EditBtn;
+        protected System.Windows.Forms.Button viewBtn;
+        protected System.Windows.Forms.Panel SearchPanel;
+        protected System.Windows.Forms.Label SearchLbl;
         protected System.Windows.Forms.TextBox searchtxt;
     }
 }

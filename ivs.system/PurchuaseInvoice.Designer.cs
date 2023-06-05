@@ -33,6 +33,13 @@ namespace ivs.system
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PurInv_dataGridView = new System.Windows.Forms.DataGridView();
+            this.ProIdGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompNameGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrizePUGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtyGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmtGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteGv = new System.Windows.Forms.DataGridViewButtonColumn();
             this.PInvAmontPanel = new System.Windows.Forms.Panel();
             this.GrandTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.GrossAmtPrzTxt = new System.Windows.Forms.Label();
@@ -54,15 +61,9 @@ namespace ivs.system
             this.TtAmtLbl = new System.Windows.Forms.Label();
             this.TtaAmtLbl = new System.Windows.Forms.Label();
             this.imsDbDataSet1 = new ivs.system.imsDbDataSet();
-            this.ProIdGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompNameGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrizePUGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtyGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmtGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteGv = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LeftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurInv_dataGridView)).BeginInit();
             this.PInvAmontPanel.SuspendLayout();
             this.GrandTableLayout.SuspendLayout();
@@ -154,6 +155,56 @@ namespace ivs.system
             this.PurInv_dataGridView.Size = new System.Drawing.Size(671, 296);
             this.PurInv_dataGridView.TabIndex = 6;
             this.PurInv_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PurInv_dataGridView_CellClick);
+            // 
+            // ProIdGv
+            // 
+            this.ProIdGv.HeaderText = "ID";
+            this.ProIdGv.Name = "ProIdGv";
+            this.ProIdGv.ReadOnly = true;
+            this.ProIdGv.Visible = false;
+            // 
+            // CompNameGv
+            // 
+            this.CompNameGv.HeaderText = "Company";
+            this.CompNameGv.Name = "CompNameGv";
+            this.CompNameGv.ReadOnly = true;
+            // 
+            // ProductGv
+            // 
+            this.ProductGv.HeaderText = "Products";
+            this.ProductGv.Name = "ProductGv";
+            this.ProductGv.ReadOnly = true;
+            // 
+            // PrizePUGv
+            // 
+            this.PrizePUGv.HeaderText = "Prize Per Unit";
+            this.PrizePUGv.Name = "PrizePUGv";
+            this.PrizePUGv.ReadOnly = true;
+            // 
+            // QtyGV
+            // 
+            this.QtyGV.HeaderText = "Qautity";
+            this.QtyGV.Name = "QtyGV";
+            this.QtyGV.ReadOnly = true;
+            // 
+            // TotalAmtGv
+            // 
+            this.TotalAmtGv.HeaderText = "Total Amount";
+            this.TotalAmtGv.Name = "TotalAmtGv";
+            this.TotalAmtGv.ReadOnly = true;
+            // 
+            // DeleteGv
+            // 
+            this.DeleteGv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            this.DeleteGv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DeleteGv.FillWeight = 110F;
+            this.DeleteGv.HeaderText = "Action";
+            this.DeleteGv.Name = "DeleteGv";
+            this.DeleteGv.ReadOnly = true;
+            this.DeleteGv.Text = "Delete";
+            this.DeleteGv.UseColumnTextForButtonValue = true;
             // 
             // PInvAmontPanel
             // 
@@ -382,56 +433,6 @@ namespace ivs.system
             this.imsDbDataSet1.DataSetName = "imsDbDataSet";
             this.imsDbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ProIdGv
-            // 
-            this.ProIdGv.HeaderText = "ID";
-            this.ProIdGv.Name = "ProIdGv";
-            this.ProIdGv.ReadOnly = true;
-            this.ProIdGv.Visible = false;
-            // 
-            // CompNameGv
-            // 
-            this.CompNameGv.HeaderText = "Company";
-            this.CompNameGv.Name = "CompNameGv";
-            this.CompNameGv.ReadOnly = true;
-            // 
-            // ProductGv
-            // 
-            this.ProductGv.HeaderText = "Products";
-            this.ProductGv.Name = "ProductGv";
-            this.ProductGv.ReadOnly = true;
-            // 
-            // PrizePUGv
-            // 
-            this.PrizePUGv.HeaderText = "Prize Per Unit";
-            this.PrizePUGv.Name = "PrizePUGv";
-            this.PrizePUGv.ReadOnly = true;
-            // 
-            // QtyGV
-            // 
-            this.QtyGV.HeaderText = "Qautity";
-            this.QtyGV.Name = "QtyGV";
-            this.QtyGV.ReadOnly = true;
-            // 
-            // TotalAmtGv
-            // 
-            this.TotalAmtGv.HeaderText = "Total Amount";
-            this.TotalAmtGv.Name = "TotalAmtGv";
-            this.TotalAmtGv.ReadOnly = true;
-            // 
-            // DeleteGv
-            // 
-            this.DeleteGv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
-            this.DeleteGv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DeleteGv.FillWeight = 110F;
-            this.DeleteGv.HeaderText = "Action";
-            this.DeleteGv.Name = "DeleteGv";
-            this.DeleteGv.ReadOnly = true;
-            this.DeleteGv.Text = "Delete";
-            this.DeleteGv.UseColumnTextForButtonValue = true;
-            // 
             // PurchuaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +444,7 @@ namespace ivs.system
             this.LeftPanel.ResumeLayout(false);
             this.LeftPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurInv_dataGridView)).EndInit();
             this.PInvAmontPanel.ResumeLayout(false);
             this.GrandTableLayout.ResumeLayout(false);

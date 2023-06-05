@@ -39,6 +39,7 @@ namespace ivs.system
             this.CatBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.rightPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +149,7 @@ namespace ivs.system
             this.Stocks.Text = "Stocks";
             this.Stocks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Stocks.UseVisualStyleBackColor = true;
+            this.Stocks.Click += new System.EventHandler(this.Stocks_Click);
             // 
             // Products
             // 
@@ -224,6 +226,7 @@ namespace ivs.system
             this.Controls.SetChildIndex(this.LeftPanel, 0);
             this.Controls.SetChildIndex(this.rightPanel, 0);
             this.rightPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

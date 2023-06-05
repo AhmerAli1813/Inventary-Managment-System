@@ -199,5 +199,32 @@ namespace ivs.system
 
             }
         }
+
+        
+        public void insertDelItemTranck(Int64 PurInvId,  int ProId, int qty , DateTime date)
+        {
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("TrackDelItemWRTPurchaseID", Mainclass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                cmd.Parameters.AddWithValue("@Pur_Id", PurInvId);
+                cmd.Parameters.AddWithValue("@Pro_Id", ProId);
+                cmd.Parameters.AddWithValue("@Date", date);
+                cmd.Parameters.AddWithValue("@Qty", qty);
+                Mainclass.con.Open();
+                cmd.ExecuteNonQuery();
+                Mainclass.con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Mainclass.con.Close();
+                Mainclass.showMsg(ex.Message, "Expection Error", "Error");
+
+            }
+         
+        }
     }
 }

@@ -54,5 +54,12 @@ namespace ivs.system
             PurchuaseInvoice windowOpen = new PurchuaseInvoice();
             Mainclass.showWindow(windowOpen, this, MDI.ActiveForm);
         }
+
+        private void Stocks_Click(object sender, EventArgs e)
+        {
+
+            Stocks windowOpen = new Stocks();
+            Mainclass.showWindow(windowOpen, this, MDI.ActiveForm);
+        }
     }
 }

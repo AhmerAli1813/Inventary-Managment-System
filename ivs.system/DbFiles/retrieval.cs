@@ -301,7 +301,7 @@ namespace ivs.system.DbFiles
          
             return prodArr;
         }
-        public void showPurInvDetailWRTPurID(Int64 PurInvId, DataGridView gv, DataGridViewColumn proIdGv, DataGridViewColumn ProductGv, DataGridViewColumn PrizeGv, DataGridViewColumn QtyGv, DataGridViewColumn TotalAmountGv)
+        public void showPurInvDetailWRTPurID(Int64 PurInvId, DataGridView gv, DataGridViewColumn mPurInvDtlIdGv, DataGridViewColumn proIdGv, DataGridViewColumn ProductGv, DataGridViewColumn PrizeGv, DataGridViewColumn QtyGv, DataGridViewColumn TotalAmountGv)
         {
             SqlCommand cmd;
             try
@@ -314,11 +314,13 @@ namespace ivs.system.DbFiles
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable tb = new DataTable();
                 da.Fill(tb);
-                proIdGv.DataPropertyName = tb.Columns["Pvd_Id"].ToString();
+                mPurInvDtlIdGv.DataPropertyName = tb.Columns["PurInvDtl_Id"].ToString();
+                
+                proIdGv.DataPropertyName = tb.Columns["ProId"].ToString();
                 ProductGv.DataPropertyName = tb.Columns["Product"].ToString();
                 PrizeGv.DataPropertyName = tb.Columns["Prize"].ToString();
                 QtyGv.DataPropertyName = tb.Columns["Quatity"].ToString();
-                TotalAmountGv.DataPropertyName = tb.Columns["Total Amount"].ToString();
+                TotalAmountGv.DataPropertyName = tb.Columns[""].ToString();
                 gv.DataSource = tb;
             }
             catch (Exception ex)
@@ -347,6 +349,34 @@ namespace ivs.system.DbFiles
 
             }
             return ProQtyCount;
+        }
+        public void showStocks( DataGridView gv, DataGridViewColumn stkIdGv, DataGridViewColumn ProIdGv, DataGridViewColumn BarcodeGv, DataGridViewColumn Catgoery, DataGridViewColumn ProductGv, DataGridViewColumn PrizeGv, DataGridViewColumn QtyGv, DataGridViewColumn TotalAmountGv , DataGridViewColumn ExdateGv , DataGridViewColumn StsGv)
+        {
+            SqlCommand cmd;
+            try
+            {
+                cmd = new SqlCommand("st_GetStocksData", Mainclass.con);
+                
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                da.Fill(tb);
+                stkIdGv.DataPropertyName = tb.Columns["stk_Id"].ToString();
+                ProIdGv.DataPropertyName = tb.Columns["ProId"].ToString();
+                ProductGv.DataPropertyName = tb.Columns["Product"].ToString();
+                PrizeGv.DataPropertyName = tb.Columns["Prize"].ToString();
+                QtyGv.DataPropertyName = tb.Columns["Qty"].ToString();
+                TotalAmountGv.DataPropertyName = tb.Columns["Total Amount"].ToString();
+                BarcodeGv.DataPropertyName = tb.Columns["Barcode"].ToString();
+                Catgoery.DataPropertyName = tb.Columns["Catgory"].ToString();
+                ExdateGv.DataPropertyName = tb.Columns["ExDate"].ToString();
+                StsGv.DataPropertyName = tb.Columns["Status"].ToString();
+                gv.DataSource = tb;
+            }
+            catch (Exception ex)
+            {
+                Mainclass.showMsg(ex.Message, "Error ...", "Error");
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ namespace ivs.system
         string _barcode, _Product, _Prize;
         string[] ProductDataArr = new string[4];
         float Qty, Prz, Tt,gt;
+        int Count;
         Regex prReg = new Regex(@"^[0-9]*(?:\.[0-9]*)?$");
         retrieval re = new retrieval();
         public PurchuaseInvoice()
@@ -29,6 +30,7 @@ namespace ivs.system
         private void PurchuaseInvoice_Load(object sender, EventArgs e)
         {
             re.ShowDropDownList("st_getSuppliersDataList", CompanyDD, "Company", "ID");
+            Mainclass.disable(LeftPanel);
         }
         private void BarcodeTxt_TextChanged(object sender, EventArgs e)
         {
@@ -65,6 +67,7 @@ namespace ivs.system
 
             }
         }
+
         private void CompanyDD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CompanyDD.SelectedIndex == -1) { CompanyErrorLbl.Visible = true; } else { CompanyErrorLbl.Visible = false; }
@@ -92,6 +95,12 @@ namespace ivs.system
                 QtyTxt.Text = "";
                 TtaAmtLbl.Text = "0.00";
             }
+
+        }
+        public override void AddBtn_Click(object sender, EventArgs e)
+        {
+            Mainclass.enable_reset(LeftPanel);
+
 
         }
         private void AddCartBtn_Click(object sender, EventArgs e)
@@ -133,9 +142,6 @@ namespace ivs.system
                 }
             }
         }
-
-        int Count;
-        
         public override void SaveBtn_Click(object sender, EventArgs e)
         {
             Int64 PurInvID;
@@ -162,6 +168,7 @@ namespace ivs.system
                 }
                 if(Count > 0)
                 {
+
                     Mainclass.showMsg("Purchuase Succcessfully ", "Success", "Success");
                 }
                 else

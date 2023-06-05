@@ -20,19 +20,19 @@ namespace ivs.system
         //global varaibles
         int edit = 0; // this is used indification for save buttton .... what is want to save 
         short Stat;
-        int CatID;
+        int CatID;public override void AddBtn_Click(object sender, EventArgs e)
+        {
+            Mainclass.enable_reset(LeftPanel);
+            edit = 0;
+
+        }
         retrieval re = new retrieval();
 
         private void Catagories_Load(object sender, EventArgs e)
         {
             Mainclass.disable(LeftPanel);
         }
-        public override void AddBtn_Click(object sender, EventArgs e)
-        {
-            Mainclass.enable_reset(LeftPanel);
-            edit = 0;
-
-        }
+        
 
         public override void SaveBtn_Click(object sender, EventArgs e)
         {
